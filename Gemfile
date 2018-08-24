@@ -34,10 +34,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 
-
-# Improve error messages
-gem 'better_errors', '~> 2.4'
-
 # Bulma CSS framework
 gem 'bulma-rails', '~> 0.7.1'
 
@@ -64,7 +60,10 @@ group :development do
 
   # Using guard for live reloading only 
   gem 'guard', '~> 2.14', '>= 2.14.2'
-  gem 'guard-livereload', '~> 2.5', '>= 2.5.2'
+  gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
+
+  # Improve error messages
+  gem 'better_errors', '~> 2.4'
 end
 
 group :test do

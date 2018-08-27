@@ -1,4 +1,4 @@
-<% content_for :page_title, "Index" %>
+<% content_for :page_title, "Posts" %>
 
 
 
@@ -17,7 +17,7 @@
                     </div>
                     <div class="comment-count">
                         <span class="tag is-rounded">
-                            <%# comment count %>
+                            <%= post.comments.count %>
                         </span>
                     </div>
                 </div>

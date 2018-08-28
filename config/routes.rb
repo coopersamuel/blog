@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   resources :posts do 
     resources :comments
+    post 'tags/add_tag' => 'posts#add_tag'
   end
+  resources :tags
   root "posts#index"
   
 end

@@ -43,6 +43,12 @@ class PostsController < ApplicationController
         redirect_to posts_path
     end
 
+    def add_tag
+        @post = Post.find(params[:post_id])
+        @post.tags.create(name: params[:name])
+        redirect_to post_path(@post)
+    end
+
     
     private
 

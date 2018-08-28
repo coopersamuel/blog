@@ -26,6 +26,34 @@
     </div>
 </section>
 
+<section class="section tags">
+    <div class="container">
+        <nav class="level">
+            <div class="level-left">
+                <div class="level-item">
+                    <h5><strong><%= @post.tags.count %></strong> Tags</h5>
+                </div>
+            </div>
+
+            <div class="level-right">
+                <%= form_tag post_tags_add_tag_path(@post), method: :post, :class => "form-inline" do %>
+                    <div class="field is-horizontal">
+                        <div class="level-item">
+                            <%= text_field_tag :name, params[:name], class: "input is-small", placeholder: "New Tag" %>
+                        </div>
+                        <div class="level-item">
+                            <%= submit_tag "Add Tag", method: :post, class: "button is-primary is-small" %> 
+                        </div>
+                    </div>  
+                <% end %>
+            </div>
+        </nav>
+        <div class="tags">
+            <%= render @post.tags %>
+        </div>
+    </div>
+</section>
+
 <section class="section comments">
     <div class="container">
         <h2 class="subtitle is-5"><strong><%= @post.comments.count %></strong> Comments</h2>

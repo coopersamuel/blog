@@ -45,7 +45,14 @@ class PostsController < ApplicationController
 
     def add_tag
         @post = Post.find(params[:post_id])
-        @post.tags.create(name: params[:name])
+
+        if Tag.exists?(name: params[:name])
+            @tag = Tag.where(name: params[:name])
+            @post.tags << @tag unless @post.tags.exists?(name: params[:name])
+        else
+            @post.tags << Tag.new(name: params[:name])
+        end
+        
         redirect_to post_path(@post)
     end
 

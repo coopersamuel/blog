@@ -15,10 +15,19 @@
                     <div class="content">
                         <%= post.content %>
                     </div>
-                    <div class="comment-count">
-                        <span class="tag is-rounded">
-                            <%= post.comments.count %>
-                        </span>
+                    <div class="level">
+                        <div class="level-left">
+                            <div class="level-item">
+                                <span class="tag is-rounded is-primary">
+                                    <%= post.comments.count %> Comments
+                                </span>
+                            </div>
+                            <div class="level-item">
+                                <span class="tags">
+                                    <%= render post.tags %>
+                                </span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
